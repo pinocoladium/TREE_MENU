@@ -1,0 +1,13 @@
+{% load tags %}
+
+{% if menus %}
+    <ul>
+        {% for menu in menus%}
+            <li><a href='{{ menu }}'>{{ menu }}</li>
+        {% endfor %}
+    </ul>    
+{% elif menu_name %}
+    <h3><a href={% url 'main_menu' %}>Главное меню</h3></a>
+    <h4>В разделе "{{menu_name}}":</h4>  
+    {% draw_menu menu_name menu_item %}
+{% endif %}
